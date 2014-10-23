@@ -1,36 +1,49 @@
-// this is a basic terrain object
-var basic_terrain = {
-	title: "base",
-	getTitle: function() {
-		return this.title;
-	},
+var GAME = { version: '1' };
 
-	movement_cost: 1,
-	city_site: true,
-	texture: ""
+// this is a basic terrain object
+GAME.BasicTerrain = function()
+{
+	this.title = '';
+	this.texture = '';
+	this.movement_cost = 1;
 };
 
-// inheritance
-var grassland = Object.create( basic_terrain );
-grassland.title = "grassland";
-grassland.movement_cost = 0.5;
-grassland.texture = "../textures/grassland.png";
+GAME.Grassland = function()
+{
+	GAME.BasicTerrain.call();
 
-var mountain = Object.create( basic_terrain );
-mountain.title = "mountain";
-mountain.movement_cost = 3;
-mountain.city_site = false;
-mountain.texture = "../textures/mountain.png";
+	this.title = 'grassland';
+	this.movement_cost = 0.5;
+	this.texture = '../textures/grassland.png';
+};
+GAME.Grassland.prototype = new GAME.BasicTerrain();
 
-var hills = Object.create( basic_terrain );
-hills.title = "hills";
-hills.movement_cost = 1.5;
-hills.texture = "../textures/hills.png";
+GAME.Mountain = function()
+{
+	GAME.BasicTerrain.call();
 
-var swamp = Object.create( basic_terrain );
-swamp.title = "swamp";
-swamp.movement_cost = 2;
-swamp.texture = "../textures/swamp.png";
+	this.title = 'mountain';
+	this.movement_cost = 3;
+	this.texture = '../textures/mountain.png';
+};
+GAME.Mountain.prototype = new GAME.BasicTerrain();
 
-// list of possible terrains
-var terrains_list = [ grassland, mountain, hills, swamp ];
+GAME.Hills = function()
+{
+	GAME.BasicTerrain.call();
+
+	this.title = 'hills';
+	this.movement_cost = 1.5;
+	this.texture = '../textures/hills.png';
+};
+GAME.Hills.prototype = new GAME.BasicTerrain();
+
+GAME.Swamp = function()
+{
+	GAME.BasicTerrain.call();
+
+	this.title = 'swamp';
+	this.movement_cost = 2;
+	this.texture = '../textures/swamp.png';
+};
+GAME.Swamp.prototype = new GAME.BasicTerrain();

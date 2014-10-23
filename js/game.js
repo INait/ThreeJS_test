@@ -46,9 +46,9 @@ function onDocumentMouseDown( event )
 	// if there is one (or more) intersections
 	if ( intersects.length > 0 )
 	{
-		console.log( intersects[0].object.material );
-		intersects[0].object.material.map.sourceFile = "../textures/hills.png";
-		intersects[0].object.material.needsUpdate = true;
+		//console.log( intersects[0].object.material );
+		//intersects[0].object.material.map.sourceFile = "../textures/hills.png";
+		//intersects[0].object.material.needsUpdate = true;
 		 //console.log("Hit @ " + toString( intersects[0] ) );
 		// change the color of the closest face.
 		//intersects[ 0 ].face.color.setRGB( 0.8 * Math.random() + 0.2, 0, 0 ); 
